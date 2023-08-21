@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const listItem = document.createElement("li");
         const anchor = document.createElement("a");
         anchor.href = file.download_url;
-        anchor.textContent = file.name;
+        anchor.textContent = file.name.split(".")[0];
         listItem.appendChild(anchor);
         fileList.appendChild(listItem);
       });

@@ -1,0 +1,42 @@
+/* styles.css */
+
+/* Estilos generales para el cuerpo de la página */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a; /* Fondo oscuro similar a una terminal de Linux */
+  color: #00ff00; /* Texto en verde */
+}
+
+/* Estilos para el encabezado */
+h1 {
+  color: #00ff00;
+  text-align: center; /* Centrar el encabezado */
+}
+
+/* Estilos para la lista de enlaces */
+#file-list {
+  list-style: none;
+  padding: 0;
+  text-align: center; /* Centrar la lista de enlaces */
+}
+
+#file-list li {
+  margin-bottom: 10px;
+}
+
+#file-list a {
+  color: #00ff00;
+  text-decoration: none;
+  display: block; /* Convertir enlaces en bloques para ocupar el ancho */
+  padding: 5px 0; /* Espaciado interno en los enlaces */
+  transition: color 0.3s ease; /* Solo cambiar el color al pasar el ratón */
+}
+
+#file-list a:hover {
+  color: #007700;
+  font-size: 18px; /* Tamaño de fuente al pasar el ratón */
+
+  /* Texto verde oscuro al pasar el ratón */
+}
