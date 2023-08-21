@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
   const fileList = document.getElementById("file-list");
-  const folder = "../pdfs/";
+  const folderPath = "../pdfs/";
 
   fetch(folderPath)
         .then(response => response.text())
