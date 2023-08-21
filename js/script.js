@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
   const fileList = document.getElementById("file-list");
-  const folderPath = "../pdfs/";
+  const folderPath = "https://api.github.com/repos/aguolmedo/aguolmedo.github.io/contents/pdfs"; 
 
   fetch(folderPath)
         .then(response => response.text())
