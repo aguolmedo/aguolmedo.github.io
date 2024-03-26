@@ -6,8 +6,23 @@
     <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
   </head>
   <body>
-    <h1>digital library</h1>
-    <ul id="file-list"></ul>
+    <div>
+      <h1>digital library</h1>
+      <ul id="file-list"></ul>
+    </div>
+
+    <div>
+      <h1>digital gallery</h1>
+      <div
+        id="image-grid"
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          gap: 10px;
+        "
+      ></div>
+    </div>
+
     <script src="./js/script.js"></script>
   </body>
 </html>
