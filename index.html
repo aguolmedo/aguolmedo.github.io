@@ -1,16 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>aguolmedo's digital library</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
   </head>
   <body>
-    <div>
+    <header class="site-header">
       <h1>digital library</h1>
-      <ul id="file-list"></ul>
-    </div>
+      <div class="toolbar">
+        <span id="count" class="count"></span>
+        <input id="search" type="search" placeholder="buscar título o autor" autocomplete="off" />
+      </div>
+    </header>
 
+    <main>
+      <ul id="grid" class="grid"></ul>
+      <p id="empty" class="empty" hidden>nada por acá</p>
+    </main>
+
+    <dialog id="book">
+      <button class="close" type="button" aria-label="cerrar" data-close>&times;</button>
+      <div class="book-layout">
+        <div class="book-poster">
+          <img id="book-cover" alt="" />
+          <label class="cover-picker" hidden>
+            cambiar portada
+            <input id="cover-input" type="file" accept="image/jpeg,image/png,image/gif" />
+          </label>
+        </div>
+
+        <div id="book-info" class="book-info">
+          <h2 id="book-title"></h2>
+          <p class="byline">de <span id="book-authors"></span></p>
+          <p id="book-meta" class="meta"></p>
+          <p id="book-description" class="description"></p>
+          <div class="actions">
+            <a id="book-download" class="btn btn-primary" download>descargar epub</a>
+            <button id="book-edit" class="btn" type="button">editar y descargar</button>
+          </div>
+        </div>
+
+        <form id="edit-form" class="edit-form" hidden>
+          <label>título <input name="title" required /></label>
+          <label>autor(es) <small>separados por &amp;</small> <input name="authors" /></label>
+          <div class="row">
+            <label>idioma <input name="language" /></label>
+            <label>editorial <input name="publisher" /></label>
+          </div>
+          <label>descripción <textarea name="description" rows="4"></textarea></label>
+          <p class="hint">los cambios solo afectan tu copia descargada, el archivo del servidor no se toca.</p>
+          <p id="edit-status" class="status" role="status"></p>
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">descargar editado</button>
+            <button id="edit-cancel" class="btn" type="button">cancelar</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <script src="./js/epub-editor.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
